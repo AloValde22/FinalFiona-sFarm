@@ -1,0 +1,212 @@
+/* -------------------- IMPORTED FONTS -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap');
+
+/* -------------------- CSS RESET ------------------------------------------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------- ROOT VARIABLES -------------------------------------- */
+:root {
+    --green: #06A816;
+    --orange: #E75D02;
+    --white: #ffffff;
+    --black: #000000;
+    --font-heading: 'Irish Grover', cursive;
+    --font-body: 'Habibi', serif;
+    --font-large: 2.5em;
+    --font-medium: 1.75em;
+    --font-small: 1.25em;
+}
+/* -------------------- GLOBAL STYLES (mobile first/small) ------------------ */
+body {
+    font-family: var(--font-body);
+    color: var(--black);
+    background-color: var(--white);
+    line-height: 1.6;
+    font-size: var(--font-small);
+}
+
+header {
+    background-color: var(--green);
+    text-align: left;
+    padding: 1.5rem;
+    color: var(--white);
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin: 0;
+}
+
+header p {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: right;
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+section {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+section h2 {
+    font-family: var(--font-heading);
+    color: var(--black);
+    font-size: var(--font-medium);
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+section h3 {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--black);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+section p {
+    text-align: left;
+    font-size: var(--font-small);
+    margin-bottom: 1.5rem;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    list-style-type: none;
+}
+
+.product-list li {
+    position: relative;
+}
+
+.product-list img {
+    width: 100%;
+    height: auto;
+}
+
+.product-list li img:hover {
+    transform: scale(1.05);
+}
+
+.product-list li span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--white);
+    padding: 0.2rem 0.5rem;
+    font-size: var(--font-small);
+}
+
+/* Footer FIX Me Later */
+.footer {
+    background-color: var(--green); 
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 15px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    max-width: 300px;
+}
+
+.footer-section h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 10px;
+    font-size: 1.5rem; 
+}
+
+.footer-section p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.footer-bottom {
+    color: var(--green);
+    background-color: var(--white);
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.top-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: var(--orange); 
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem; 
+    cursor: pointer;
+}
+
+
+/* -------------------- MEDIA QUERY (medium) -------------------------------- */
+@media (min-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* -------------------- MEDIA QUERY (large) --------------------------------- */
+@media (min-width: 992px) {
+    .product-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media (min-width: 1200px) {
+    header h1 {
+        font-size: 4rem;
+    }
+
+    section p {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        padding: 50px 100px;
+    }
+
+    .top-button {
+        padding: 15px 20px;
+        font-size: 1.2rem;
+    }
+}
